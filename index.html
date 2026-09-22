@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clima Agora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="."><span class="brand-mark">+</span> clima agora</a>
+      <span class="status-dot">dados em tempo real</span>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">CONSULTA CLIMÁTICA</p>
+      <h1 id="page-title">Como está o céu<br><em>por aí?</em></h1>
+      <p class="intro">Digite uma cidade e descubra as condições atuais em poucos segundos.</p>
+    </section>
+
+    <form id="weather-form" class="search-panel">
+      <label for="city">LOCALIZAÇÃO</label>
+      <div class="search-row">
+        <input id="city" name="city" type="text" placeholder="Ex.: São Paulo" autocomplete="off" required>
+        <select id="method" name="method" aria-label="Método da requisição">
+          <option value="fetch">Fetch API</option>
+          <option value="axios">Axios</option>
+        </select>
+        <button type="submit" id="search-button"><span>Buscar clima</span><strong>↗</strong></button>
+      </div>
+    </form>
+
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+
+    <section id="result" class="result" aria-live="polite" aria-label="Resultado do clima"></section>
+
+    <footer>OpenWeatherMap · temperatura em graus Celsius</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.7.9/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
